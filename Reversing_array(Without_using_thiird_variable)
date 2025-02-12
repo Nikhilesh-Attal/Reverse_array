@@ -1,0 +1,27 @@
+//Reverse array without using third variable
+
+#include<stdio.h>
+
+int main(){
+    int a[10]={1,4,7,2,5,8,3,6,9,0};
+    int i;
+    printf("Entered array is :\t");
+    for(i=0;i<10;i++){
+        printf("%d\t",a[i]);
+    }
+    printf("\n");
+     int start = 0, end = 9;
+    while(end>start){
+        a[start] = a[start] + a[end];
+        a[end] = a[start] - a[end];
+        a[start] = a[start] - a[end];
+        end--;
+        start++;
+    }
+
+    printf("Array after reverse :\t");
+    for(i=0;i<10;i++){
+        printf("%d\t",a[i]);
+    }
+    return 0;
+}
